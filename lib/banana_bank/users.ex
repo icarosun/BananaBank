@@ -1,3 +1,7 @@
 defmodule BananaBank.Users do
-  defdelegate create(params), to: BananaBank.Users.Create, as: :call
+  alias BananaBank.Users.Create
+  alias BananaBank.Users.Get
+
+  defdelegate create(params), to: Create, as: :call
+  defdelegate get(id), to: Get, as: :call
 end
