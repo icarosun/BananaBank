@@ -1,6 +1,11 @@
 defmodule BananaBank.ViaCep.Client do
+  alias BananaBank.ViaCep.ClientBehaviour
+
   @default_url "https://viacep.com.br/ws"
 
+  @behaviour BananaBank.ViaCep.ClientBehaviour
+
+  @impl ClientBehaviour
   def call(url \\ @default_url, cep) do
     client = Tesla.client([{Tesla.Middleware.BaseUrl, base_url: url}, Tesla.Middleware.JSON])
 
