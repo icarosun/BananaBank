@@ -21,7 +21,7 @@ defmodule BananaBank.ViaCep.Client do
     {:error, :bad_request}
   end
 
-  defp handle_response({:error, _}) do
+  defp handle_response({:error, _reason}) do
     {:error, :internal_server_error}
   end
 end
